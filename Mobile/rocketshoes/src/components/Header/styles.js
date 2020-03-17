@@ -18,6 +18,8 @@ export const Wrapper = styled.SafeAreaView`
   flex-direction: row;
 `;
 
+export const LogoButton = styled.TouchableHighlight``;
+
 export const Logo = styled.Image.attrs({
   source: logo,
   resizeMode: 'cover',
