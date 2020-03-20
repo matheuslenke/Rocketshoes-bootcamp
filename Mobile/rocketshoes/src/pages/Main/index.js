@@ -39,9 +39,9 @@ export default function Main() {
   }, []);
 
   const amount = useSelector(state =>
-    state.cart.reduce((amount, product) => {
-      amount[product.id] = product.amount;
-      return amount;
+    state.cart.reduce((amountSum, product) => {
+      amountSum[product.id] = product.amount;
+      return amountSum;
     }, {})
   );
 
