@@ -7,9 +7,7 @@ import { formatPrice } from '../../../util/format';
 
 import { addToCartSuccess, updateAmountSuccess } from './actions';
 
-function* addToCart({ id, navigation }) {
-  console.tron.log('entrou aqui desgraça');
-  console.tron.log(navigation);
+function* addToCart({ id }) {
   const productExists = yield select(state =>
     state.cart.find(product => product.id === id)
   );
@@ -38,7 +36,7 @@ function* addToCart({ id, navigation }) {
 
     yield put(addToCartSuccess(data));
 
-    yield call(navigation.navigate, 'Cart');
+    NavigationService.navigate('Cart');
   }
 }
 
